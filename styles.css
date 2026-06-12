@@ -58,10 +58,37 @@ img {
   box-shadow: 0 10px 35px rgba(23, 35, 63, 0.08);
 }
 
-.brand img {
+.brand-mark {
+  position: relative;
+  display: inline-block;
   width: 46px;
   height: 46px;
-  object-fit: contain;
+  border-radius: 50% 50% 50% 12%;
+  background: linear-gradient(135deg, #16d2dc 0%, #145bd7 58%, #0f2d73 100%);
+  transform: rotate(-16deg);
+  box-shadow: inset -9px -8px 0 rgba(255, 255, 255, 0.28);
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: 8px;
+  height: 3px;
+  border-radius: 999px;
+  background: #145bd7;
+  transform: rotate(-14deg);
+}
+
+.brand-mark::before {
+  width: 42px;
+}
+
+.brand-mark::after {
+  width: 30px;
+  bottom: 17px;
+  background: #25b7e8;
 }
 
 .brand {
@@ -516,8 +543,9 @@ img {
   align-items: end;
   color: var(--white);
   background:
-    linear-gradient(180deg, rgba(15, 45, 115, 0.2), rgba(15, 45, 115, 0.92)),
-    url("宣传物料/云雀通讯_80x200易拉宝_中兴风格_正式Logo_v5.png") center 16% / cover;
+    radial-gradient(circle at 22% 18%, rgba(37, 183, 232, 0.34), transparent 30%),
+    linear-gradient(145deg, rgba(20, 91, 215, 0.88), rgba(15, 45, 115, 0.98)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.12) 0 1px, transparent 1px 58px);
 }
 
 .featured-case p,
@@ -582,26 +610,28 @@ img {
   color: #bdefff;
 }
 
-.qr-panel {
+.contact-panel {
   padding: 14px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
-  text-align: center;
+  min-height: 152px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.qr-panel img {
-  width: 152px;
-  height: 152px;
-  margin: 0 auto 12px;
-  object-fit: cover;
-  border-radius: 4px;
-  background: var(--white);
+.contact-panel strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--white);
+  font-size: 20px;
 }
 
-.qr-panel span {
+.contact-panel span {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.86);
+  line-height: 1.7;
 }
 
 .site-footer {
@@ -641,7 +671,7 @@ img {
     padding: 0 18px;
   }
 
-  .brand img {
+  .brand-mark {
     width: 40px;
     height: 40px;
   }
