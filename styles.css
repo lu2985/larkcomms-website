@@ -418,6 +418,16 @@ img {
   line-height: 1.75;
 }
 
+.case-card small {
+  display: block;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(20, 91, 215, 0.14);
+  color: #37506f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .business-card a {
   color: var(--blue);
   font-weight: 700;
@@ -490,13 +500,20 @@ img {
   min-height: 250px;
   padding: 30px;
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: flex-start;
   background: linear-gradient(180deg, #fff, #f7fbff);
+}
+
+.case-card > * {
+  width: 100%;
 }
 
 .featured-case {
   grid-row: span 2;
   min-height: 522px;
+  justify-content: flex-end;
+  align-items: end;
   color: var(--white);
   background:
     linear-gradient(180deg, rgba(15, 45, 115, 0.2), rgba(15, 45, 115, 0.92)),
@@ -507,6 +524,27 @@ img {
 .featured-case h3,
 .featured-case span {
   color: var(--white);
+}
+
+.case-results {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  align-items: baseline;
+}
+
+.case-results strong {
+  color: #bdefff;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.case-results span {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 14px;
 }
 
 .research-section {
